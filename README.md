@@ -28,7 +28,7 @@ This repository aims to provide a diverse set of conceptual workflows that you c
 * **Potential Inputs:** What dynamic information the workflow would likely need.
 * **Conceptual Steps:** A high-level overview of the actions involved.
 
-You can find these conceptual workflows in the `workflow-use-ideas.json` file in this repository. ALL EXPERIMENTAL.
+You can find these conceptual workflows in the `workflow-use.json` file in this repository. ALL EXPERIMENTAL.
 
 ## Why This Repo? A Little Bit About Me & My Love for `workflow-use` ❤️
 
@@ -46,7 +46,7 @@ So, this repository is my small way of giving back, sharing ideas, and hopefully
 
 ## Example Conceptual Workflow Structure
 
-Here's a snippet of how a workflow idea is structured in `workflow-use-ideas.json`:
+Here's a snippet of how a workflow idea is structured in `workflow-use.json`:
 
 ```json
 {
