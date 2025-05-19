@@ -1,0 +1,788 @@
+[
+  {
+    "name": "Social Media Cross-Platform Post",
+    "description": "Post the same update to multiple social media platforms.",
+    "target_website_category": "Social Media",
+    "target_websites_examples": ["Twitter", "Facebook", "LinkedIn"],
+    "core_idea": "Share content across multiple social networks simultaneously.",
+    "potential_inputs": ["post_content (string, required)", "image_url (string, optional)"],
+    "conceptual_steps": [
+      "Login to Platform 1",
+      "Compose post with {post_content} and optional {image_url}",
+      "Publish post on Platform 1",
+      "Login to Platform 2",
+      "Compose post with {post_content} and optional {image_url}",
+      "Publish post on Platform 2",
+      "Login to Platform 3",
+      "Compose post with {post_content} and optional {image_url}",
+      "Publish post on Platform 3"
+    ]
+  },
+  {
+    "name": "Gmail Daily Digest",
+    "description": "Search Gmail for important emails from the last 24 hours and list subjects/senders.",
+    "target_website_category": "Email",
+    "target_websites_examples": ["Gmail"],
+    "core_idea": "Get a summary of important new emails without manually checking.",
+    "potential_inputs": ["priority_senders (string, optional)", "priority_keywords (string, optional)"],
+    "conceptual_steps": [
+      "Login to Gmail",
+      "Construct search query using {priority_senders} and {priority_keywords} for 'newer_than:1d'",
+      "Execute search",
+      "Iterate through results, extract sender and subject",
+      "Output compiled list"
+    ]
+  },
+  {
+    "name": "Article to To-Do Task",
+    "description": "Create a task in a to-do app from selected text on a webpage.",
+    "target_website_category": "Productivity, News",
+    "target_websites_examples": ["Trello, Asana, Todoist", "Any news website"],
+    "core_idea": "Quickly capture tasks from web content.",
+    "potential_inputs": ["selected_text (string, required)", "source_url (string, required)", "task_list_name (string, optional)"],
+    "conceptual_steps": [
+      "Capture {selected_text} and {source_url} (from browser context)",
+      "Login to To-Do App",
+      "Navigate to {task_list_name} or default list",
+      "Create new task with title {selected_text}",
+      "Add {source_url} to task description or notes",
+      "Save task"
+    ]
+  },
+  {
+    "name": "E-commerce Product Price Tracker",
+    "description": "Check the price of a specific product and log it.",
+    "target_website_category": "E-commerce",
+    "target_websites_examples": ["Amazon", "eBay", "Specific retailer sites"],
+    "core_idea": "Monitor product prices for changes.",
+    "potential_inputs": ["product_url (string, required)"],
+    "conceptual_steps": [
+      "Navigate to {product_url}",
+      "Locate price element",
+      "Extract price text",
+      "Log product name and extracted price"
+    ]
+  },
+  {
+    "name": "Google Calendar Quick Event",
+    "description": "Quickly create a new Google Calendar event.",
+    "target_website_category": "Calendar, Productivity",
+    "target_websites_examples": ["Google Calendar"],
+    "core_idea": "Add events to calendar with minimal clicks.",
+    "potential_inputs": ["event_title (string, required)", "event_date (string, required)", "start_time (string, required)", "end_time (string, optional)"],
+    "conceptual_steps": [
+      "Login to Google Calendar",
+      "Click 'Create Event' button",
+      "Input {event_title}",
+      "Input {event_date}",
+      "Input {start_time}",
+      "Input {end_time} (if provided)",
+      "Save event"
+    ]
+  },
+  {
+    "name": "YouTube Video Downloader (Conceptual)",
+    "description": "Navigate to a YouTube video and initiate a download using a third-party downloader website (conceptual, actual download is out of browser scope).",
+    "target_website_category": "Video, Utility",
+    "target_websites_examples": ["YouTube", "Online video downloader sites (e.g., y2mate.com - use with caution)"],
+    "core_idea": "Automate the initial steps of downloading a YouTube video.",
+    "potential_inputs": ["youtube_video_url (string, required)"],
+    "conceptual_steps": [
+      "Navigate to Downloader Website",
+      "Input {youtube_video_url} into the download field",
+      "Click 'Download' or 'Start' button on the downloader site",
+      "Select video quality/format (if options appear and are recordable)",
+      "Click final download link (if presented)"
+    ]
+  },
+  {
+    "name": "Reddit Keyword Monitor & Notification",
+    "description": "Search Reddit for new posts containing specific keywords in a subreddit.",
+    "target_website_category": "Social Media, Forum",
+    "target_websites_examples": ["Reddit"],
+    "core_idea": "Stay updated on specific topics in a subreddit.",
+    "potential_inputs": ["subreddit_name (string, required)", "keywords (string, required)"],
+    "conceptual_steps": [
+      "Navigate to Reddit",
+      "Navigate to r/{subreddit_name}",
+      "Use search bar within subreddit for '{keywords}', sort by new",
+      "Extract titles and links of new posts",
+      "Log new posts (or conceptually, send a notification)"
+    ]
+  },
+  {
+    "name": "Daily News Headlines Fetcher",
+    "description": "Fetch top headlines from a news website.",
+    "target_website_category": "News",
+    "target_websites_examples": ["BBC News", "CNN", "Reuters"],
+    "core_idea": "Get a quick overview of current news.",
+    "potential_inputs": ["news_website_url (string, required)", "number_of_headlines (integer, optional, default 5)"],
+    "conceptual_steps": [
+      "Navigate to {news_website_url}",
+      "Identify and extract top {number_of_headlines} headlines (texts and links)",
+      "Output headlines"
+    ]
+  },
+  {
+    "name": "Track Package Status",
+    "description": "Check the status of a shipment on a carrier's website.",
+    "target_website_category": "Logistics, E-commerce",
+    "target_websites_examples": ["FedEx", "UPS", "DHL", "USPS"],
+    "core_idea": "Automate package tracking.",
+    "potential_inputs": ["tracking_number (string, required)", "carrier_website_url (string, required)"],
+    "conceptual_steps": [
+      "Navigate to {carrier_website_url}",
+      "Locate tracking input field",
+      "Enter {tracking_number}",
+      "Click 'Track' button",
+      "Extract and output tracking status information"
+    ]
+  },
+  {
+    "name": "Convert Currency",
+    "description": "Use an online currency converter to find the exchange rate.",
+    "target_website_category": "Finance, Utility",
+    "target_websites_examples": ["Google Search (for 'USD to EUR')", "xe.com"],
+    "core_idea": "Quickly find currency exchange rates.",
+    "potential_inputs": ["amount (number, required)", "from_currency (string, required)", "to_currency (string, required)"],
+    "conceptual_steps": [
+      "Navigate to currency converter site (or Google search for '{amount} {from_currency} to {to_currency}')",
+      "Input {amount}",
+      "Select {from_currency}",
+      "Select {to_currency}",
+      "Extract converted amount",
+      "Output result"
+    ]
+  },
+  {
+    "name": "LinkedIn Profile View & Connect (Conceptual)",
+    "description": "View a LinkedIn profile and send a connection request with a personalized message.",
+    "target_website_category": "Social Media, Professional Networking",
+    "target_websites_examples": ["LinkedIn"],
+    "core_idea": "Automate LinkedIn outreach (use responsibly and within LinkedIn's ToS).",
+    "potential_inputs": ["profile_url (string, required)", "connection_message (string, optional)"],
+    "conceptual_steps": [
+      "Login to LinkedIn",
+      "Navigate to {profile_url}",
+      "Click 'Connect' button",
+      "If message option appears, input {connection_message}",
+      "Send connection request"
+    ]
+  },
+  {
+    "name": "GitHub Repository Issue Creation",
+    "description": "Create a new issue in a GitHub repository.",
+    "target_website_category": "Development, Project Management",
+    "target_websites_examples": ["GitHub"],
+    "core_idea": "Quickly log bugs or feature requests.",
+    "potential_inputs": ["repository_url (string, required)", "issue_title (string, required)", "issue_body (string, optional)", "labels (string, optional, comma-separated)"],
+    "conceptual_steps": [
+      "Login to GitHub",
+      "Navigate to {repository_url}/issues",
+      "Click 'New issue' button",
+      "Input {issue_title}",
+      "Input {issue_body}",
+      "Add {labels} (if applicable)",
+      "Submit new issue"
+    ]
+  },
+  {
+    "name": "Daily Weather Forecast Check",
+    "description": "Check the weather forecast for a specific location.",
+    "target_website_category": "Weather, Utility",
+    "target_websites_examples": ["AccuWeather", "Weather.com", "Google Weather"],
+    "core_idea": "Get the daily weather update automatically.",
+    "potential_inputs": ["location (string, required)"],
+    "conceptual_steps": [
+      "Navigate to weather website",
+      "Search for {location}",
+      "Extract current temperature, forecast (e.g., 'Sunny'), high/low temperatures",
+      "Output weather information"
+    ]
+  },
+  {
+    "name": "Book Flight (Initial Search)",
+    "description": "Perform an initial flight search on an airline or aggregator site.",
+    "target_website_category": "Travel",
+    "target_websites_examples": ["Google Flights", "Expedia", "Skyscanner", "Airline websites"],
+    "core_idea": "Automate the first steps of finding flight options.",
+    "potential_inputs": ["origin_city (string, required)", "destination_city (string, required)", "departure_date (string, required)", "return_date (string, optional)", "passengers (integer, optional, default 1)"],
+    "conceptual_steps": [
+      "Navigate to flight search website",
+      "Input {origin_city}",
+      "Input {destination_city}",
+      "Input {departure_date}",
+      "Input {return_date} (if provided)",
+      "Input {passengers}",
+      "Click 'Search Flights' button",
+      "(Optional) Extract top few flight results or prices if elements are consistently identifiable"
+    ]
+  },
+  {
+    "name": "Online Course Enrollment (Browse & Add to Cart)",
+    "description": "Search for a course on a platform like Udemy or Coursera and add it to the cart.",
+    "target_website_category": "Education, E-commerce",
+    "target_websites_examples": ["Udemy", "Coursera"],
+    "core_idea": "Automate the initial steps of finding and selecting an online course.",
+    "potential_inputs": ["course_keyword (string, required)", "platform_url (string, required)"],
+    "conceptual_steps": [
+      "Navigate to {platform_url}",
+      "Login (if necessary)",
+      "Search for {course_keyword}",
+      "Select the first (or a specific) course from the results",
+      "Click 'Add to Cart' or 'Enroll' (if free and leads to enrollment)"
+    ]
+  },
+  {
+    "name": "Create Playlist on Spotify (Web Player)",
+    "description": "Create a new playlist with a given name.",
+    "target_website_category": "Music, Entertainment",
+    "target_websites_examples": ["Spotify Web Player"],
+    "core_idea": "Automate playlist creation.",
+    "potential_inputs": ["playlist_name (string, required)"],
+    "conceptual_steps": [
+      "Navigate to Spotify Web Player",
+      "Login",
+      "Click 'Create Playlist' button",
+      "Input {playlist_name}",
+      "Confirm playlist creation"
+    ]
+  },
+  {
+    "name": "Add Song to Spotify Playlist (Web Player)",
+    "description": "Search for a song and add it to an existing playlist.",
+    "target_website_category": "Music, Entertainment",
+    "target_websites_examples": ["Spotify Web Player"],
+    "core_idea": "Quickly add songs to a specific playlist.",
+    "potential_inputs": ["song_title (string, required)", "artist_name (string, optional)", "playlist_name (string, required)"],
+    "conceptual_steps": [
+      "Navigate to Spotify Web Player",
+      "Login",
+      "Search for '{song_title} {artist_name}'",
+      "Find the song in search results",
+      "Click '...' (more options) next to the song",
+      "Select 'Add to Playlist'",
+      "Select '{playlist_name}' from the list of playlists"
+    ]
+  },
+  {
+    "name": "Check Stock Availability",
+    "description": "Check if a product is in stock on an e-commerce site.",
+    "target_website_category": "E-commerce",
+    "target_websites_examples": ["Best Buy", "Newegg", "Target"],
+    "core_idea": "Automate stock checking for high-demand items.",
+    "potential_inputs": ["product_page_url (string, required)"],
+    "conceptual_steps": [
+      "Navigate to {product_page_url}",
+      "Locate the stock status element (e.g., 'In Stock', 'Out of Stock')",
+      "Extract and output the stock status"
+    ]
+  },
+  {
+    "name": "Submit Feedback Form",
+    "description": "Fill out and submit a generic website feedback form.",
+    "target_website_category": "General Web",
+    "target_websites_examples": ["Any website with a 'Contact Us' or 'Feedback' form"],
+    "core_idea": "Automate sending feedback.",
+    "potential_inputs": ["name (string, optional)", "email (string, required)", "subject (string, optional)", "message (string, required)", "form_url (string, required)"],
+    "conceptual_steps": [
+      "Navigate to {form_url}",
+      "Input {name} into name field",
+      "Input {email} into email field",
+      "Input {subject} into subject field",
+      "Input {message} into message/feedback field",
+      "Click 'Submit' button"
+    ]
+  },
+  {
+    "name": "Archive Emails by Sender in Gmail",
+    "description": "Search for emails from a specific sender and archive them.",
+    "target_website_category": "Email",
+    "target_websites_examples": ["Gmail"],
+    "core_idea": "Clean up inbox by archiving old emails from a sender.",
+    "potential_inputs": ["sender_email (string, required)"],
+    "conceptual_steps": [
+      "Login to Gmail",
+      "Search for 'from:{sender_email}'",
+      "Select all displayed emails (or first N emails)",
+      "Click 'Archive' button"
+    ]
+  },
+  {
+    "name": "Wikipedia Article Summary (First Paragraph)",
+    "description": "Fetch the first paragraph of a Wikipedia article.",
+    "target_website_category": "Reference, Information",
+    "target_websites_examples": ["Wikipedia"],
+    "core_idea": "Quickly get a brief overview of a topic.",
+    "potential_inputs": ["topic_name (string, required)"],
+    "conceptual_steps": [
+      "Navigate to wikipedia.org",
+      "Search for {topic_name}",
+      "On the article page, locate and extract the text of the first paragraph",
+      "Output the extracted paragraph"
+    ]
+  },
+  {
+    "name": "Google Drive: Create New Document",
+    "description": "Create a new Google Document with a specific title.",
+    "target_website_category": "Productivity, Cloud Storage",
+    "target_websites_examples": ["Google Drive"],
+    "core_idea": "Automate new document creation.",
+    "potential_inputs": ["document_title (string, required)"],
+    "conceptual_steps": [
+      "Navigate to Google Drive (drive.google.com)",
+      "Login",
+      "Click 'New' button",
+      "Select 'Google Docs'",
+      "Wait for new document to open",
+      "Click on 'Untitled document' to rename",
+      "Input {document_title}",
+      "Press Enter to save title"
+    ]
+  },
+  {
+    "name": "Translate Text using Google Translate",
+    "description": "Translate a piece of text from one language to another.",
+    "target_website_category": "Utility, Language",
+    "target_websites_examples": ["translate.google.com"],
+    "core_idea": "Automate text translation.",
+    "potential_inputs": ["text_to_translate (string, required)", "source_language (string, optional, e.g., 'en')", "target_language (string, required, e.g., 'es')"],
+    "conceptual_steps": [
+      "Navigate to translate.google.com",
+      "Input {text_to_translate} into source text area",
+      "Select {source_language} (if specified, otherwise auto-detect)",
+      "Select {target_language}",
+      "Extract translated text from target text area",
+      "Output translated text"
+    ]
+  },
+  {
+    "name": "Find Local Businesses on Google Maps",
+    "description": "Search for a type of business in a specific location.",
+    "target_website_category": "Mapping, Local Search",
+    "target_websites_examples": ["Google Maps"],
+    "core_idea": "Automate local business searches.",
+    "potential_inputs": ["business_type (string, required, e.g., 'cafe')", "location (string, required, e.g., 'London')"],
+    "conceptual_steps": [
+      "Navigate to Google Maps",
+      "Input '{business_type} in {location}' into search bar",
+      "Click search button",
+      "(Optional) Extract names and addresses of top few results"
+    ]
+  },
+  {
+    "name": "Add Item to Amazon Wish List",
+    "description": "Search for a product on Amazon and add it to a specific wish list.",
+    "target_website_category": "E-commerce",
+    "target_websites_examples": ["Amazon"],
+    "core_idea": "Automate adding items to wish lists.",
+    "potential_inputs": ["product_name (string, required)", "wish_list_name (string, optional, if multiple lists)"],
+    "conceptual_steps": [
+      "Navigate to Amazon",
+      "Login",
+      "Search for {product_name}",
+      "Click on the desired product from search results",
+      "On product page, locate and click 'Add to List' or 'Add to Wish List' button",
+      "If multiple lists, select {wish_list_name}"
+    ]
+  },
+  {
+    "name": "Check Domain Availability",
+    "description": "Check if a domain name is available using a domain registrar's website.",
+    "target_website_category": "Web Services, Domains",
+    "target_websites_examples": ["GoDaddy", "Namecheap", "Google Domains"],
+    "core_idea": "Automate domain availability checks.",
+    "potential_inputs": ["domain_name (string, required)", "registrar_url (string, required)"],
+    "conceptual_steps": [
+      "Navigate to {registrar_url}",
+      "Input {domain_name} into domain search field",
+      "Click 'Search' button",
+      "Extract availability status (e.g., 'Available', 'Taken')",
+      "Output status"
+    ]
+  },
+  {
+    "name": "Unsubscribe from Mailing List (Generic)",
+    "description": "Open an email and click an unsubscribe link.",
+    "target_website_category": "Email",
+    "target_websites_examples": ["Gmail", "Outlook.com"],
+    "core_idea": "Automate the process of unsubscribing from one email (requires identifying the email first).",
+    "potential_inputs": ["email_subject_to_find_unsubscribe (string, required)"],
+    "conceptual_steps": [
+      "Login to email client",
+      "Search for email with subject {email_subject_to_find_unsubscribe}",
+      "Open the found email",
+      "Locate and click an 'unsubscribe' link (this is the tricky part, often needs agentic step)",
+      "Follow prompts on unsubscribe page if any (e.g., confirm unsubscribe)"
+    ]
+  },
+  {
+    "name": "Get Stock Price from Yahoo Finance",
+    "description": "Fetch the current stock price for a given ticker symbol.",
+    "target_website_category": "Finance",
+    "target_websites_examples": ["finance.yahoo.com"],
+    "core_idea": "Quickly get stock quotes.",
+    "potential_inputs": ["ticker_symbol (string, required)"],
+    "conceptual_steps": [
+      "Navigate to finance.yahoo.com",
+      "Input {ticker_symbol} into search bar",
+      "Click search or select from suggestions",
+      "On the stock page, extract current price and company name",
+      "Output information"
+    ]
+  },
+  {
+    "name": "Post a Classified Ad (Conceptual First Steps)",
+    "description": "Start the process of posting a classified ad on a site like Craigslist or Gumtree.",
+    "target_website_category": "Classifieds",
+    "target_websites_examples": ["Craigslist", "Gumtree"],
+    "core_idea": "Automate the initial steps of listing an item.",
+    "potential_inputs": ["category (string, required)", "title (string, required)", "description (string, required)", "price (string, optional)", "location (string, required)"],
+    "conceptual_steps": [
+      "Navigate to classifieds website",
+      "Select 'Post an Ad' or similar",
+      "Select {category}",
+      "Select {location}",
+      "Input {title}",
+      "Input {description}",
+      "Input {price}",
+      "Proceed to next step (e.g., image upload or contact info)"
+    ]
+  },
+  {
+    "name": "Download Bank Statement (Conceptual)",
+    "description": "Navigate to a bank's website, log in, and download the latest monthly statement.",
+    "target_website_category": "Finance, Banking",
+    "target_websites_examples": ["Online banking portal of any major bank"],
+    "core_idea": "Automate retrieval of bank statements (highly sensitive, for personal use only).",
+    "potential_inputs": ["bank_url (string, required)", "username (string, required)", "password (string, required, use with extreme caution)"],
+    "conceptual_steps": [
+      "Navigate to {bank_url}",
+      "Input {username}",
+      "Input {password}",
+      "Click 'Login'",
+      "Handle 2FA if prompted (likely manual intervention or advanced setup)",
+      "Navigate to 'Statements' or 'Documents' section",
+      "Select the latest monthly statement",
+      "Click 'Download' button"
+    ]
+  },
+  {
+    "name": "Find a Recipe Online",
+    "description": "Search for a recipe based on ingredients or dish name.",
+    "target_website_category": "Food, Lifestyle",
+    "target_websites_examples": ["Allrecipes", "Food Network", "Epicurious"],
+    "core_idea": "Quickly find recipes.",
+    "potential_inputs": ["dish_name_or_ingredients (string, required)", "recipe_site_url (string, optional)"],
+    "conceptual_steps": [
+      "Navigate to {recipe_site_url} (or Google search if not provided)",
+      "Input {dish_name_or_ingredients} into search bar",
+      "Click 'Search'",
+      "Open the first (or a specific) recipe link",
+      "(Optional) Extract ingredients list or instructions"
+    ]
+  },
+  {
+    "name": "Book a Restaurant Table (Initial Steps)",
+    "description": "Search for restaurant availability on a booking platform.",
+    "target_website_category": "Food, Hospitality",
+    "target_websites_examples": ["OpenTable", "Resy", "TheFork"],
+    "core_idea": "Automate the initial check for restaurant reservations.",
+    "potential_inputs": ["restaurant_name (string, required)", "date (string, required)", "time (string, required)", "party_size (integer, required)"],
+    "conceptual_steps": [
+      "Navigate to restaurant booking platform",
+      "Search for {restaurant_name}",
+      "Input {date}",
+      "Input {time}",
+      "Input {party_size}",
+      "Click 'Find a Table' or 'Check Availability'",
+      "(Optional) Extract available time slots"
+    ]
+  },
+  {
+    "name": "Upload File to Google Drive",
+    "description": "Upload a local file to a specific folder in Google Drive.",
+    "target_website_category": "Cloud Storage, Productivity",
+    "target_websites_examples": ["Google Drive"],
+    "core_idea": "Automate file uploads.",
+    "potential_inputs": ["file_path (string, required, local path)", "target_folder_name (string, optional)"],
+    "conceptual_steps": [
+      "Navigate to Google Drive",
+      "Login",
+      "If {target_folder_name} provided, navigate into that folder",
+      "Click 'New' button",
+      "Select 'File upload'",
+      "Select {file_path} from the file dialog (this step is tricky for web automation and usually needs extension interaction or known input field for path)"
+    ]
+  },
+  {
+    "name": "Daily Dilbert Comic Fetch",
+    "description": "Fetch the latest Dilbert comic strip.",
+    "target_website_category": "Entertainment, Comics",
+    "target_websites_examples": ["dilbert.com"],
+    "core_idea": "Get the daily comic strip.",
+    "potential_inputs": [],
+    "conceptual_steps": [
+      "Navigate to dilbert.com",
+      "Locate the element containing today's comic image",
+      "Extract the image URL or take a screenshot of the comic area"
+    ]
+  },
+  {
+    "name": "Check Website Status (HTTP Status)",
+    "description": "Navigate to a URL and (conceptually) check its HTTP status, though browser automation primarily sees rendered page.",
+    "target_website_category": "Utility, Web Development",
+    "target_websites_examples": ["Any website"],
+    "core_idea": "A simple check if a website loads in the browser.",
+    "potential_inputs": ["website_url (string, required)"],
+    "conceptual_steps": [
+      "Navigate to {website_url}",
+      "If page loads without obvious error (e.g., browser's error page), assume 'OK'",
+      "(For actual HTTP status, a different tool is better, but browser can check for error pages)"
+    ]
+  },
+  {
+    "name": "Start a Pomodoro Timer Online",
+    "description": "Start a timer on an online Pomodoro timer website.",
+    "target_website_category": "Productivity, Utility",
+    "target_websites_examples": ["pomofocus.io", "tomato-timer.com"],
+    "core_idea": "Automate starting a focus session.",
+    "potential_inputs": ["duration_minutes (integer, optional, default 25)"],
+    "conceptual_steps": [
+      "Navigate to online Pomodoro timer website",
+      "(Optional) Configure timer for {duration_minutes} if site allows",
+      "Click 'Start' button"
+    ]
+  },
+  {
+    "name": "LinkedIn: Like Latest Post from Connection",
+    "description": "Navigate to a connection's profile and like their most recent post (use responsibly).",
+    "target_website_category": "Social Media, Professional Networking",
+    "target_websites_examples": ["LinkedIn"],
+    "core_idea": "Engage with a connection's content.",
+    "potential_inputs": ["connection_profile_url (string, required)"],
+    "conceptual_steps": [
+      "Login to LinkedIn",
+      "Navigate to {connection_profile_url}",
+      "Scroll to activity/posts section",
+      "Locate the first/latest post",
+      "Click the 'Like' button on that post"
+    ]
+  },
+  {
+    "name": "Medium: Clap for an Article",
+    "description": "Open a Medium article and give it claps.",
+    "target_website_category": "Blogging, Content Platform",
+    "target_websites_examples": ["Medium"],
+    "core_idea": "Show appreciation for an article.",
+    "potential_inputs": ["article_url (string, required)", "number_of_claps (integer, optional, default 1)"],
+    "conceptual_steps": [
+      "Navigate to {article_url}",
+      "Login to Medium (if necessary for clapping)",
+      "Locate the clap button",
+      "Click the clap button {number_of_claps} times (or hold, depending on site UI)"
+    ]
+  },
+  {
+    "name": "Google Search and Open First Result",
+    "description": "Perform a Google search and navigate to the first organic search result.",
+    "target_website_category": "Search Engine",
+    "target_websites_examples": ["Google"],
+    "core_idea": "Quickly access the top search result for a query.",
+    "potential_inputs": ["search_query (string, required)"],
+    "conceptual_steps": [
+      "Navigate to google.com",
+      "Input {search_query} into search bar",
+      "Click 'Google Search' button",
+      "Identify and click the link of the first organic search result"
+    ]
+  },
+  {
+    "name": "File Convert (e.g., JPG to PNG online)",
+    "description": "Upload a file to an online converter and download the converted file (upload/download interactions can be complex).",
+    "target_website_category": "Utility, File Conversion",
+    "target_websites_examples": ["online-convert.com", "zamzar.com"],
+    "core_idea": "Automate file format conversion using web tools.",
+    "potential_inputs": ["source_file_path (string, required)", "target_format (string, required, e.g., 'png')"],
+    "conceptual_steps": [
+      "Navigate to online file converter website",
+      "Upload {source_file_path} (tricky step)",
+      "Select {target_format}",
+      "Click 'Convert' button",
+      "Wait for conversion",
+      "Click 'Download' button for the converted file"
+    ]
+  },
+  {
+    "name": "Daily Horoscope Check",
+    "description": "Check daily horoscope for a specific zodiac sign.",
+    "target_website_category": "Lifestyle, Entertainment",
+    "target_websites_examples": ["horoscope.com", "astrology.com"],
+    "core_idea": "Get daily astrological forecast.",
+    "potential_inputs": ["zodiac_sign (string, required)"],
+    "conceptual_steps": [
+      "Navigate to horoscope website",
+      "Select or navigate to the page for {zodiac_sign}",
+      "Extract the daily horoscope text",
+      "Output the horoscope"
+    ]
+  },
+  {
+    "name": "Add Product to eBay Watchlist",
+    "description": "Search for a product on eBay and add it to the watchlist.",
+    "target_website_category": "E-commerce, Auction",
+    "target_websites_examples": ["eBay"],
+    "core_idea": "Track items of interest on eBay.",
+    "potential_inputs": ["product_keyword (string, required)"],
+    "conceptual_steps": [
+      "Navigate to eBay",
+      "Login",
+      "Search for {product_keyword}",
+      "Click on a specific product listing from the results",
+      "On the product page, click 'Add to Watchlist' button"
+    ]
+  },
+  {
+    "name": "Check Airline Flight Status",
+    "description": "Check the status of a flight using flight number and date on an airline's website.",
+    "target_website_category": "Travel, Airline",
+    "target_websites_examples": ["Delta", "United", "American Airlines website"],
+    "core_idea": "Get real-time flight status.",
+    "potential_inputs": ["airline_url (string, required)", "flight_number (string, required)", "flight_date (string, required, YYYY-MM-DD)"],
+    "conceptual_steps": [
+      "Navigate to {airline_url} flight status page",
+      "Input {flight_number}",
+      "Input {flight_date}",
+      "Click 'Check Status' or 'Search' button",
+      "Extract flight status (e.g., 'On Time', 'Delayed', 'Landed')",
+      "Output status"
+    ]
+  },
+  {
+    "name": "Submit Website to Google Search Console (Add Property)",
+    "description": "Conceptual: Start the process of adding a new property (website) to Google Search Console.",
+    "target_website_category": "Webmaster Tools, SEO",
+    "target_websites_examples": ["Google Search Console"],
+    "core_idea": "Automate adding a site to GSC.",
+    "potential_inputs": ["website_url_to_add (string, required)"],
+    "conceptual_steps": [
+      "Navigate to Google Search Console",
+      "Login",
+      "Click 'Add property' (or equivalent UI element)",
+      "Select 'Domain' or 'URL prefix' method",
+      "Input {website_url_to_add}",
+      "Click 'Continue' (Verification steps beyond this are complex and likely manual)"
+    ]
+  },
+  {
+    "name": "Get Lyrics for a Song",
+    "description": "Search for song lyrics on a lyrics website.",
+    "target_website_category": "Music, Information",
+    "target_websites_examples": ["Genius", "AZLyrics"],
+    "core_idea": "Quickly find song lyrics.",
+    "potential_inputs": ["song_title (string, required)", "artist_name (string, optional)"],
+    "conceptual_steps": [
+      "Navigate to lyrics website",
+      "Search for '{song_title} {artist_name}'",
+      "Open the correct song lyrics page",
+      "Extract the lyrics text (might require scrolling or handling multiple sections)",
+      "Output lyrics"
+    ]
+  },
+  {
+    "name": "RSVP to a Google Calendar Event",
+    "description": "Open a Google Calendar invitation email and click 'Yes', 'No', or 'Maybe'.",
+    "target_website_category": "Email, Calendar",
+    "target_websites_examples": ["Gmail", "Google Calendar"],
+    "core_idea": "Automate responding to calendar invites.",
+    "potential_inputs": ["event_invitation_email_subject (string, required)", "rsvp_response (string, required, e.g., 'Yes', 'No', 'Maybe')"],
+    "conceptual_steps": [
+      "Login to Gmail",
+      "Search for email with subject {event_invitation_email_subject}",
+      "Open the email",
+      "Locate and click the '{rsvp_response}' button within the email or the linked calendar event view"
+    ]
+  },
+  {
+    "name": "Pinterest: Pin Image from URL",
+    "description": "Pin an image from a given URL to a specific Pinterest board.",
+    "target_website_category": "Social Media, Image Sharing",
+    "target_websites_examples": ["Pinterest"],
+    "core_idea": "Automate saving images to Pinterest.",
+    "potential_inputs": ["image_source_url (string, required)", "board_name (string, required)", "pin_description (string, optional)"],
+    "conceptual_steps": [
+      "Login to Pinterest",
+      "Click 'Create Pin' or '+' button",
+      "Select 'Save from site' or similar option",
+      "Input {image_source_url}",
+      "Select the image to pin (if multiple are found)",
+      "Choose {board_name}",
+      "Input {pin_description}",
+      "Save Pin"
+    ]
+  },
+  {
+    "name": "Stack Overflow: Search for a Question",
+    "description": "Search Stack Overflow for questions related to a programming error or topic.",
+    "target_website_category": "Q&A, Development",
+    "target_websites_examples": ["Stack Overflow"],
+    "core_idea": "Quickly find answers to programming questions.",
+    "potential_inputs": ["search_query_or_error (string, required)"],
+    "conceptual_steps": [
+      "Navigate to stackoverflow.com",
+      "Input {search_query_or_error} into the search bar",
+      "Click 'Search' or press Enter",
+      "(Optional) Extract titles and links of top few relevant questions"
+    ]
+  },
+  {
+    "name": "Indeed/LinkedIn Job Search",
+    "description": "Perform a job search based on keywords and location.",
+    "target_website_category": "Job Board, Professional Networking",
+    "target_websites_examples": ["Indeed", "LinkedIn Jobs"],
+    "core_idea": "Automate initial job searching.",
+    "potential_inputs": ["job_title_keywords (string, required)", "location (string, required)", "job_site_url (string, required)"],
+    "conceptual_steps": [
+      "Navigate to {job_site_url}",
+      "Input {job_title_keywords} into 'what' field",
+      "Input {location} into 'where' field",
+      "Click 'Search Jobs' button",
+      "(Optional) Extract job titles, companies, and links from the first page of results"
+    ]
+  },
+  {
+    "name": "Create a Poll on Twitter",
+    "description": "Post a tweet that includes a poll with multiple options.",
+    "target_website_category": "Social Media",
+    "target_websites_examples": ["Twitter"],
+    "core_idea": "Automate creating Twitter polls.",
+    "potential_inputs": ["poll_question (string, required)", "option1 (string, required)", "option2 (string, required)", "option3 (string, optional)", "option4 (string, optional)", "poll_duration_days (integer, optional, default 1)"],
+    "conceptual_steps": [
+      "Login to Twitter",
+      "Click 'Tweet' or 'Post' button",
+      "Click 'Poll' icon",
+      "Input {poll_question}",
+      "Input {option1}",
+      "Input {option2}",
+      "Input {option3} (if provided)",
+      "Input {option4} (if provided)",
+      "Set poll duration (e.g., {poll_duration_days})",
+      "Post tweet"
+    ]
+  },
+  {
+    "name": "Send a Message on Slack (Web Version)",
+    "description": "Send a message to a specific channel or user in Slack via the web interface.",
+    "target_website_category": "Communication, Team Collaboration",
+    "target_websites_examples": ["app.slack.com"],
+    "core_idea": "Automate sending Slack messages.",
+    "potential_inputs": ["workspace_url (string, required, e.g., 'myteam.slack.com')", "channel_or_user_name (string, required)", "message_text (string, required)"],
+    "conceptual_steps": [
+      "Navigate to {workspace_url}",
+      "Login",
+      "Search for and open channel/DM with {channel_or_user_name}",
+      "Type {message_text} into the message input field",
+      "Press Enter or click send button"
+    ]
+  }
+]
