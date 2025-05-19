@@ -38,7 +38,7 @@ I genuinely love the open-source world and the spirit of sharing and building to
 
 I admire the Browser Use team immensely. They are truly exceptional, and I believe they're tackling a fundamentally important challenge for the entire AI and automation industry. The tools they are building, especially `workflow-use,` are absolute game-changers.
 
-As a growth marketer, I see the incredible potential here. The ability to "show" your browser what to do once and then have it reliably repeat those actions, with the intelligence to adapt or fall back to an AI agent when things go sideways, is revolutionary. Honestly, **every marketer (and frankly, anyone who does repetitive tasks on the web) MUST check out `workflow-use`**. It's poised to save countless hours and unlock new levels of productivity. Their tool is GAME-CHANGING and mostly needs "how-to-use" examples for their growth and expansion. 
+As a growth marketer, I see the incredible potential here. The ability to "show" your browser what to do once and then have it reliably repeat those actions, with the intelligence to adapt or fall back to an AI agent when things go sideways, is revolutionary. Honestly, **every marketer (and being honest here, anyone who does repetitive tasks on the web) MUST check out `workflow-use`**. It's poised to save countless hours and unlock new levels of productivity. Their tool is GAME-CHANGING and mostly needs "how-to-use" examples for their growth and expansion. 
 
 They don't need it actually(for marketing), but I also want to expand their growth experiments with growth hacking ideas. Like creating new ready-to-use repos.  
 
