@@ -46,7 +46,7 @@ So, this repository is my small way of giving back, sharing ideas, and hopefully
 
 ## Example Conceptual Workflow Structure
 
-Here's a snippet of how a workflow idea is structured in `workflow_ideas.json`:
+Here's a snippet of how a workflow idea is structured in `workflow-use-ideas.json`:
 
 ```json
 {
