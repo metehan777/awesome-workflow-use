@@ -1,4 +1,4 @@
-# Awesome Workflow Use
+# Awesome Workflow Use Ideas & Conceptual Steps
 
 <p align="center">
   <img alt="Workflow Use logo - a product by Browser Use." src="https://raw.githubusercontent.com/browser-use/workflow-use/main/static/workflow-use.png" width="200">
